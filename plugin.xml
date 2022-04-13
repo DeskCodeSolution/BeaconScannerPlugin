@@ -12,6 +12,6 @@
                 <param name="ios-package" value="BeaconScannerPlugin" />
             </feature>
         </config-file>
-        <source-file src="src/ios/BeaconScannerPlugin.m" />
+        <source-file src="src/ios/BeaconScannerPlugin.swift" />
     </platform>
 </plugin>
