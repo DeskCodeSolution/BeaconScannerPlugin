@@ -5,6 +5,7 @@
     // MARK: Properties
     var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR)
     var timer = Timer()
+    var commandTimer: CDVInvokedUrlCommand? = nil
 
     @objc(add:) func add(_ command: CDVInvokedUrlCommand) {
         var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR)
@@ -22,10 +23,14 @@
     }
 
     @objc(timerStart:) func timerStart(_ command: CDVInvokedUrlCommand) {
+        commandTimer = command
+        self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+    }
+
+    @objc func update() {
+        // Something cool
         var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR)
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Timer count")
-            self.commandDelegate!.send(pluginResult, callbackId: command.callbackId)
-        })
+        pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Timer count")
+        self.commandDelegate!.send(pluginResult, callbackId: commandTimer?.callbackId)
     }
 }
