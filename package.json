@@ -1,0 +1,25 @@
+{
+  "name": "BeaconScannerPlugin",
+  "version": "1.0.0",
+  "description": "test",
+  "cordova": {
+    "id": "cordova-plugin-beaconscanner",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeskCodeSolution/BeaconScannerPlugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Deskcode",
+  "license": "2022",
+  "bugs": {
+    "url": "https://github.com/DeskCodeSolution/BeaconScannerPlugin/issues"
+  },
+  "homepage": "https://github.com/DeskCodeSolution/BeaconScannerPlugin#readme"
+}
